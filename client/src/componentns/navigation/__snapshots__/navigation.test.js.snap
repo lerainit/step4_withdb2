@@ -1,0 +1,22 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Navigation renders should Navigation match snapshot 1`] = `
+<DocumentFragment>
+  <header
+    class="header"
+  >
+    <a
+      aria-current="page"
+      class="logo active"
+      href="/"
+    >
+      <h2>
+        Instagram
+      </h2>
+    </a>
+    <div
+      class="container"
+    />
+  </header>
+</DocumentFragment>
+`;
