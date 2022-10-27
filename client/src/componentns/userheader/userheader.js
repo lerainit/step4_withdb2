@@ -36,24 +36,16 @@ let id = props.id
 
                     <h3>{user.info}</h3>
                 </div>
-                <button className={styles.subscribe_btn} onClick={() => {
+             { !user.isAuth &&
+              <button className={styles.subscribe_btn} onClick={ async() => {
+                     await    dispatch(setSubscribersAC())
+                     await  dispatch(addSubscriberAC({ index: index, subscriber: user ,users:users,id:id}))   
+              
+                }}>Subscribe</button>}
+                { user.isAuth &&
+               < button className={styles.subscribe_btn}>Edit profile</button>
 
-                    if(user.subscribers.length < 50){
-                     dispatch({type:setSubscribers,payload:users})
-                
-                    dispatch(addSubscriberAC({ index: index, subscriber: user ,users:users,id:id}))
-                    }
-                   else if(user.subscribers.length >= 50){
-                 
-                dispatch(addSubscriberAC({ index: index, subscriber: user ,users:users,id:id}))   
-                      dispatch(setSubscribersAC())
-            
-            }
-                
- 
-
- 
-                }}>Subscribe</button>
+                }
             </header>
 
         </>

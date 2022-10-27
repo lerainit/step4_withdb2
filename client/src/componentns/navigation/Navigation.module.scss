@@ -32,7 +32,7 @@
     width: 500px;
     display: flex;
     flex-direction: column;
-    color: cadetblue;
+    color: darkslategrey;
 
 
   }
@@ -49,7 +49,7 @@
   }
   .fav_link{
       text-decoration: none;
-      color: cadetblue;
+      color:darkslategray;
       width: 250px;
       height: 70px;
       
@@ -65,5 +65,28 @@
    margin-left: 155px;
  }
 .user_name{
-  color:darkblue;
+  color:black;
+}
+.auth_img{
+  width: 60px;
+  height: 60px;
+  border-radius: 25px;
+  position: absolute;
+  top: 10px;
+  left:3px;
+}
+.auth_name{
+  color:beige;
+  position: absolute;
+  top:10px;
+ right: 60px;
+ 
+}
+.auth_container{
+  width: 200px;
+  display: flex;
+  align-items: center;
+border:1px solid #fff;
+position: relative;
+  color: cadetblue;
 }

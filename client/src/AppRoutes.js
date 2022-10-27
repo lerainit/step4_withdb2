@@ -13,7 +13,7 @@ const users = useSelector(store =>store.users.value)
      
         <Routes>
             <Route path='/' element={<PostsPage />   } />
-        {users.map(({id},index) => <Route path={`/user${id}`} element={<UserPage index={index} id ={id}/>} />)} 
+        {users.map(({id,name},index) => <Route path={`/${name.replace(/\s+/g, '')}`} element={<UserPage index={index} id ={id}/>} />)} 
            <Route path='/posts' element={<UserPage />} />
        
            <Route path='*' element={<NotFoundPage />} />

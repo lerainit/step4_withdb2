@@ -40,13 +40,9 @@ index = 1
   },
   body: JSON.stringify({subscriber:users[index] , userId:id})
 })
-if(subscribers.length < 50){
-    localStorage.setItem('users',JSON.stringify(users))
 
-return {value:JSON.parse(localStorage.getItem('users')),isLoading:false} }
-else if (subscribers.length >= 50){
    return {value:users,isLoading:false}
-}
+
             }
            
         default:{
