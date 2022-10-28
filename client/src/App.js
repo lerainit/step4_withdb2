@@ -12,6 +12,7 @@ import { setUsersAC } from './store/users/actionCreators';
 import { setBackgroundAC } from './store/cardBackground/actionCreators';
 import { setSubscribersAC } from './store/subscribers/actionCreators';
 import { setCommentsAC } from './store/comments/actionCreators';
+import { setFollowersAC } from './store/followers/actionCreators';
 
 
 
@@ -25,6 +26,7 @@ const App = () => {
   const isLoadingBackground = useSelector(store => store.background.isLoading)
   const isLoadingSubscribers = useSelector(store => store.subscribers.isLoading)
 const isLoadingComments = useSelector(store =>store.comments.isLoading)
+const isLoadingFollowers = useSelector(store => store.followers.isLoading)
 
   useEffect(() => {
 
@@ -35,9 +37,10 @@ const isLoadingComments = useSelector(store =>store.comments.isLoading)
     dispatch(setBackgroundAC())
     dispatch(setSubscribersAC())
     dispatch(setCommentsAC())
+    dispatch(setFollowersAC())
   }, [])
 
-  if (isLoadingPosts || isLoadingUsers || isLoadingProducts || isLoadingCounter || isLoadingBackground || isLoadingSubscribers || isLoadingComments) {
+  if (isLoadingPosts || isLoadingUsers || isLoadingProducts || isLoadingCounter || isLoadingBackground || isLoadingSubscribers || isLoadingComments || isLoadingFollowers) {
     return (
       <>
         <h1>LOADING</h1>

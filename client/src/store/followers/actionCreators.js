@@ -11,7 +11,8 @@ export const setFollowersAC = () => async (dispatch) => {
             
          console.log(data)  
            
-        data.forEach( (isAuth,subscribers) => {  
+        data.forEach( ({isAuth,subscribers}) => {  
+         
           if(isAuth) { dispatch({ type:setFollowers,payload:subscribers})}
             })}
         

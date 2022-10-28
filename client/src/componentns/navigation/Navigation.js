@@ -9,7 +9,9 @@ const Navigation = () => {
 
 const users= useSelector(store => store.users.value)
     
+const followers = useSelector(store =>store.followers.value)
 
+console.log(followers)
     return (
        
     <header className={styles.header}>
