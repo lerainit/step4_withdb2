@@ -17,8 +17,9 @@ return({value:action.payload,isLoading:false})
 
 case addFollowers: {
 let followersArr = state.value
-let follower = action.payload.follower
-followersArr.push(follower)
+let follower = followersArr[action.payload.userIndex].isFollower
+follower = true
+return {value:followersArr,isLoading:false}
 }
 default :{
     return state

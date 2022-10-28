@@ -48,3 +48,11 @@ export const addNewSubscriberData = async (subscriber,userId) =>{
     return usersdb
 
 }
+
+export const deleteSubscriberData =async(subscriberIndex,userId) =>{
+
+   let usersdb = await Users.findOne({id:userId})  
+   usersdb.subscribers.splice(subscriberIndex,1)
+   await usersdb.save()
+   return usersdb
+}
