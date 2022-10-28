@@ -1,4 +1,4 @@
-import { setFollowers,addFollowers } from "./actions";
+import { setFollowers,addFollower } from "./actions";
 const initialValue ={
 
 value:[],
@@ -15,7 +15,7 @@ return({value:action.payload,isLoading:false})
 
     }
 
-case addFollowers: {
+case addFollower: {
 let followersArr = state.value
 let follower = followersArr[action.payload.userIndex].isFollower
 follower = true

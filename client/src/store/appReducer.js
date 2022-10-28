@@ -9,6 +9,7 @@ import UsersReducer from "./users/reducer";
 import subscriberReducer from "./subscribers/reducer";
 import userIndexReducer from "./userIndex/reducer";
 import commentsReducer from "./comments/reducer";
+import FollowerReducer from "./followers/reducer";
 
 
 const appReducer = combineReducers({
@@ -21,7 +22,8 @@ const appReducer = combineReducers({
    users: UsersReducer,
    subscribers: subscriberReducer,
    userIndex: userIndexReducer,
-   comments: commentsReducer
+   comments: commentsReducer,
+   followers:FollowerReducer
 
 })
 export default appReducer
