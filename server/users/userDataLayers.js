@@ -25,7 +25,10 @@ name:String,
 nickName:String,
 url:String,
 subscribers:Array,
-info:String
+info:String,
+isAuth:Boolean,
+isFollower:Boolean
+
 
 })
 
@@ -47,6 +50,19 @@ export const addNewSubscriberData = async (subscriber,userId) =>{
  await usersdb.save()
     return usersdb
 
+}
+export const becomeFollowerData =(userId) =>{
+  
+
+ Users.findOneAndUpdate({id:+userId},{isFollower:true},{new:true},(err)=>{
+    if(err){
+       console.log(err)
+    }
+    console.log('updated')
+ })
+
+
+  
 }
 
 export const deleteSubscriberData =async(subscriberIndex,userId) =>{

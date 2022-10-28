@@ -1,4 +1,4 @@
-import { addSubscriber,setSubscribers } from "./actions";
+import { addSubscriber,setSubscribers,addAuthSubscriber } from "./actions";
 
 const initialValue = {
     value:[],
@@ -33,7 +33,7 @@ index = 1
         
          
 
-             fetch('http://localhost:3001/users', {
+             fetch('http://localhost:3001/users/subscribers', {
   method: 'PUT',
   headers: {
     'Content-Type': 'application/json'
@@ -44,7 +44,27 @@ index = 1
    return {value:users,isLoading:false}
 
             }
-           
+           case addAuthSubscriber: {
+let users = state.value
+let id = action.payload.id
+let user = users[action.payload.index]
+
+let subscribers = user.subscribers
+let authUser = users[action.payload.authIndex]
+
+subscribers.push(authUser)
+users[action.payload.index].subscribers = subscribers
+
+fetch('http://localhost:3001/users/subscribers', {
+    method: 'PUT',
+    headers: {
+      'Content-Type': 'application/json'
+    },
+    body: JSON.stringify({subscriber:authUser , userId:id})
+  })
+  return {value:users,isLoading:false}
+
+           }
         default:{
             return state
         }

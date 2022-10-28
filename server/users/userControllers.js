@@ -1,4 +1,4 @@
-import { getUsersData,addNewSubscriberData,deleteSubscriberData } from "./userDataLayers.js";
+import { getUsersData,addNewSubscriberData,deleteSubscriberData,becomeFollowerData } from "./userDataLayers.js";
 
 export const getUsers =  async (req,res) =>{
     const data = await  getUsersData()
@@ -10,6 +10,13 @@ export const addNewSubscriber = async (req,res) =>{
 res.json({status:'success',data})
 
 }
+export const becomeFollower = async (req,res) =>{
+    console.log(req.body.userId)
+    const data = await becomeFollowerData(req.body.userId);
+res.json({status:'success',data})
+
+}
+
 export const deleteSubscriber = async(req,res)=>{
 const data = await deleteSubscriberData(req.body.subscriberIndex,req.body.userId)
 res.json({status:'success',data})

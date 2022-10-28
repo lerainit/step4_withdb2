@@ -1,4 +1,4 @@
-import { setFollowers,addFollower } from "./actions";
+import { setFollowers,becomeFollower } from "./actions";
 
 export const setFollowersAC = () => async (dispatch) => {
 
@@ -11,10 +11,10 @@ export const setFollowersAC = () => async (dispatch) => {
             
          console.log(data)  
            
-        data.forEach( ({isAuth,subscribers}) => {  
+      
          
-          if(isAuth) { dispatch({ type:setFollowers,payload:subscribers})}
-            })}
+         dispatch({ type:setFollowers,payload:data})
+            }
         
      
 
@@ -25,4 +25,4 @@ export const setFollowersAC = () => async (dispatch) => {
 
 
 } 
-export const addFollowerAC = (payload) =>({type:addFollower,payload})
+export const becomeFollowerAC = (payload) =>({type:becomeFollower,payload})

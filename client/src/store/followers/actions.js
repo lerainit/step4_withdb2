@@ -1,2 +1,2 @@
 export const setFollowers = 'setFollowers'
- export const addFollower = 'addFollower'
+ export const becomeFollower = 'addFollower'

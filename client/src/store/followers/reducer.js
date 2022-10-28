@@ -1,4 +1,4 @@
-import { setFollowers,addFollower } from "./actions";
+import { setFollowers,becomeFollower } from "./actions";
 const initialValue ={
 
 value:[],
@@ -15,11 +15,22 @@ return({value:action.payload,isLoading:false})
 
     }
 
-case addFollower: {
-let followersArr = state.value
-let follower = followersArr[action.payload.userIndex].isFollower
-follower = true
-return {value:followersArr,isLoading:false}
+case becomeFollower: {
+let usersArr = state.value
+
+ usersArr[action.payload.userIndex].isFollower = true
+
+ fetch('http://localhost:3001/users/follower', {
+    method: 'PUT',
+    headers: {
+      'Content-Type': 'application/json'
+    },
+    body: JSON.stringify({ userId:action.payload.id})
+  })
+
+
+
+return {value:usersArr,isLoading:false}
 }
 default :{
     return state
