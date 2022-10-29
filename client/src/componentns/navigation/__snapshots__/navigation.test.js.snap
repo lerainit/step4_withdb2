@@ -27,7 +27,7 @@ exports[`Navigation renders should Navigation match snapshot 1`] = `
       </h4>
     </div>
     <h4>
-      Followers
+      Following
     </h4>
   </header>
 </DocumentFragment>

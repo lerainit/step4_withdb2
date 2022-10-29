@@ -45,7 +45,7 @@ const authIndex = users.findIndex(({isAuth}) => isAuth === true)
 
             </div>
             
-              <h4>Followers</h4>
+              <h4>Following</h4>
             { users.map(({url,name,id,isAuth,isFollower},index) =>  isFollower ? <div className={styles.follower_container} ><NavLink className={styles.cart_link} to ={`/${name.replace(/\s+/g, '')}`} ><img className={styles.cart} src={url} alt="img" /><h2 className={styles.user_name}>{name}</h2></NavLink></div> :null)
             }
             </header>
