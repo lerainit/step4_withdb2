@@ -33,7 +33,7 @@ const authIndex = users.findIndex(({isAuth}) => isAuth === true)
                       <div className={styles.container}>
                     
                               <h4>Suggestions for you</h4>
-              {    users.map(({url,name,id,isAuth},index) => isAuth ? null :<div className={styles.user_container} ><NavLink className={styles.cart_link} to ={`/${name.replace(/\s+/g, '')}`} ><img className={styles.cart} src={url} alt="img" /><h2 className={styles.user_name}>{name}</h2></NavLink><button onClick={
+              {    users.map(({url,name,id,isAuth,isFollower},index) => isAuth || isFollower ? null :<div className={styles.user_container} ><NavLink className={styles.cart_link} to ={`/${name.replace(/\s+/g, '')}`} ><img className={styles.cart} src={url} alt="img" /><h2 className={styles.user_name}>{name}</h2></NavLink><button onClick={
                 async() => {
                     
                   await dispatch(setSubscribersAC())   
@@ -41,11 +41,14 @@ const authIndex = users.findIndex(({isAuth}) => isAuth === true)
                  await dispatch(setFollowersAC())
                 await   dispatch(becomeFollowerAC({userIndex:index,id:id}))
                    }      
-              }>Follow</button></div>)
-               
-}
+              }>Follow</button></div>)}
 
-            </div></header>
+            </div>
+            
+              <h4>Followers</h4>
+            { users.map(({url,name,id,isAuth,isFollower},index) =>  isFollower ? <div className={styles.follower_container} ><NavLink className={styles.cart_link} to ={`/${name.replace(/\s+/g, '')}`} ><img className={styles.cart} src={url} alt="img" /><h2 className={styles.user_name}>{name}</h2></NavLink></div> :null)
+            }
+            </header>
 
 )
 

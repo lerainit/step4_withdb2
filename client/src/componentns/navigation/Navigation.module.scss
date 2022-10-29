@@ -17,8 +17,10 @@
     width: 40px;
     height: 30px;
     margin-top: 25px;
+  
+   
     border-radius: 22px;
-    margin-left: 165px;
+   
   }
   .favorite_img{
     width: 40px;
@@ -57,7 +59,7 @@
   .cart_link h2{
    font-size: 20px;
    margin-top: -5px;
-   margin-left:155px ;
+   margin-left:15px ;
  } 
  .fav_link h2{
    font-size: 20px;
@@ -65,7 +67,10 @@
    margin-left: 155px;
  }
 .user_name{
+  
   color:black;
+  font-weight: 500;
+
 }
 .auth_img{
   width: 60px;
@@ -79,7 +84,7 @@
   color:beige;
   position: absolute;
   top:10px;
- right: 60px;
+ right: 30px;
  
 }
 .auth_container{
@@ -89,4 +94,18 @@
 border:1px solid #fff;
 position: relative;
   color: cadetblue;
+}
+.user_container{
+  width:200px;
+  margin-left: 150px;
+
+
+}
+.user_container button{
+  border-radius: 5px;
+  background-color:transparent;
+  color: cornflowerblue;
+  border: none;
+  font-size: 18px;
+  font-weight: 600;
 }
