@@ -15,8 +15,20 @@ exports[`Navigation renders should Navigation match snapshot 1`] = `
       </h2>
     </a>
     <div
+      class="auth_container"
+    >
+        
+    </div>
+    <div
       class="container"
-    />
+    >
+      <h4>
+        Suggestions for you
+      </h4>
+    </div>
+    <h4>
+      Followers
+    </h4>
   </header>
 </DocumentFragment>
 `;
