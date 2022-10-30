@@ -2,7 +2,7 @@
   .header{
     width: 200px;
     height:2000;
-    background-color: rgba(0,0,0,0.3);
+    background-color: #fff;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -10,7 +10,7 @@
   }
 
 .logo{
-    color: royalblue;
+    color:black;
     text-decoration: none;
   }
   .cart{
@@ -81,7 +81,7 @@
   left:3px;
 }
 .auth_name{
-  color:beige;
+  color:black;
   position: absolute;
   top:10px;
  right: 30px;
@@ -102,6 +102,14 @@ position: relative;
 
 }
 .user_container button{
+  border-radius: 5px;
+  background-color:transparent;
+  color: cornflowerblue;
+  border: none;
+  font-size: 18px;
+  font-weight: 600;
+}
+.follower_container button{
   border-radius: 5px;
   background-color:transparent;
   color: cornflowerblue;

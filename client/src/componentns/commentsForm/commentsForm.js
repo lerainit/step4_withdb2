@@ -4,6 +4,7 @@ import { useDispatch,useSelector } from "react-redux";
 import * as yup from 'yup'
 import { addCommentsAC, setCommentsAC } from "../../store/comments/actionCreators";
 import { setProducts } from "../../store/products/actions";
+import styles from './commentsForm.module.scss'
 
 
 
@@ -68,9 +69,9 @@ const CommentsForm = (props) => {
 
 
         return (
-          <Form>
+          <Form >
 
-            <Field
+            <Field className={styles.form}
               type='text'
               name='comment'
               placeholder='Add comment'
@@ -80,7 +81,7 @@ const CommentsForm = (props) => {
 
 
 
-            <button className='form_button' disabled={!dirty || !isValid} type="submit">Post</button>
+            <button className={styles.form_button} disabled={!dirty || !isValid} type="submit">Post</button>
 
           </Form>
 

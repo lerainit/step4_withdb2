@@ -1,4 +1,4 @@
-import { addSubscriber, setSubscribers,addAuthSubscriber } from "./actions";
+import { addSubscriber, setSubscribers,addAuthSubscriber,removeSubscriber } from "./actions";
 
 
 
@@ -25,3 +25,4 @@ export const setSubscribersAC =() =>  async (dispatch) =>{
 
 export const addSubscriberAC = (payload) =>({type:addSubscriber,payload})
 export const addAuthSubscriberAC = (payload) =>({type:addAuthSubscriber,payload})
+export const removeSubscriberAC = (payload) =>({type:removeSubscriber,payload})

@@ -1,5 +1,5 @@
 import express from "express";
-import { getUsers,addNewSubscriber,deleteSubscriber,becomeFollower } from "./userControllers.js";
+import { getUsers,addNewSubscriber,becomeFollower,unFollow,removeSubscriber } from "./userControllers.js";
 
 
 const userRouter = express.Router()
@@ -9,7 +9,7 @@ userRouter.get('',getUsers)
 
 userRouter.put('/subscribers',addNewSubscriber)
 userRouter.put('/follower',becomeFollower)
-
-userRouter.delete('',deleteSubscriber)
+userRouter.put('/follower/unfollow',unFollow)
+userRouter.delete('',removeSubscriber)
 
 export default userRouter

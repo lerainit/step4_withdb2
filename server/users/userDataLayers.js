@@ -51,6 +51,13 @@ export const addNewSubscriberData = async (subscriber,userId) =>{
     return usersdb
 
 }
+export const removeSubscriberData = async (index,userId) =>{
+   let usersdb = await Users.findOne({id:userId})  
+    usersdb.subscribers.splice(index,1)
+ await usersdb.save()
+    return usersdb
+
+}
 export const becomeFollowerData =(userId) =>{
   
 
@@ -64,11 +71,16 @@ export const becomeFollowerData =(userId) =>{
 
   
 }
+export const unFollowData =(userId) =>{
+  
 
-export const deleteSubscriberData =async(subscriberIndex,userId) =>{
-
-   let usersdb = await Users.findOne({id:userId})  
-   usersdb.subscribers.splice(subscriberIndex,1)
-   await usersdb.save()
-   return usersdb
-}
+   Users.findOneAndUpdate({id:+userId},{isFollower:false},{new:true},(err)=>{
+      if(err){
+         console.log(err)
+      }
+      console.log('updated')
+   })
+  
+  
+    
+  }

@@ -1,4 +1,4 @@
-import { setFollowers,becomeFollower } from "./actions";
+import { setFollowers,becomeFollower,unFollow } from "./actions";
 
 export const setFollowersAC = () => async (dispatch) => {
 
@@ -26,3 +26,4 @@ export const setFollowersAC = () => async (dispatch) => {
 
 } 
 export const becomeFollowerAC = (payload) =>({type:becomeFollower,payload})
+export const unFollowAC = (payload) =>({type:unFollow,payload})

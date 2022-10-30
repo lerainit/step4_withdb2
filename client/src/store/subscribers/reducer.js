@@ -1,4 +1,4 @@
-import { addSubscriber,setSubscribers,addAuthSubscriber } from "./actions";
+import { addSubscriber,setSubscribers,addAuthSubscriber ,removeSubscriber} from "./actions";
 
 const initialValue = {
     value:[],
@@ -65,6 +65,27 @@ fetch('http://localhost:3001/users/subscribers', {
   return {value:users,isLoading:false}
 
            }
+           case removeSubscriber: {
+            let users = state.value
+            let id = action.payload.id
+            let user = users[action.payload.index]
+            
+            let subscribers = user.subscribers
+           
+            
+            subscribers.splice(action.payload.authIndex,1)
+            users[action.payload.index].subscribers = subscribers
+            
+            fetch('http://localhost:3001/users', {
+                method: 'DELETE',
+                headers: {
+                  'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({index:action.payload.authIndex, userId:id})
+              })
+              return {value:users,isLoading:false}
+            
+                       }
         default:{
             return state
         }
